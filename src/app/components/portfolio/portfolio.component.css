@@ -1,0 +1,138 @@
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+  color: #fff;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1;
+}
+
+.section-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #888;
+  margin: 0;
+}
+
+.portfolio-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  width: 100%;
+  align-items: stretch; /* Ensure both columns stretch to same height */
+}
+
+@media (max-width: 900px) {
+  .portfolio-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%; /* Takes full height of the grid cell */
+}
+
+.image-wrapper {
+  flex: 1; /* Both images share exactly the 50% available vertical space */
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Also takes full height */
+}
+
+.portfolio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem; /* Increased padding vertically to stretch the list more */
+  border-bottom: 1px solid #222;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.portfolio-item:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.portfolio-item:first-child {
+  border-top: 1px solid #222;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  padding-right: 1rem;
+}
+
+.item-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.item-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #e5e5e5;
+  margin: 0 0 0.4rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.item-desc {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.item-number {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.06);
+  line-height: 1;
+}

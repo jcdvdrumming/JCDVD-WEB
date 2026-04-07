@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+#drum-doctor {
+  background-color: #f7f7f7;
+  color: #111;
+}
+
+#portfolio {
+  background-color: #121212;
+}
+
+#clases {
+  background-color: #f8f8f8; /* slightly lighter than f7f7f7 maybe, or just use f8f8f8 */
+  color: #111;
+}
+
+#contacto {
+  background-color: #0f0f0f;
+}

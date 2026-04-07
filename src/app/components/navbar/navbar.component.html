@@ -1,0 +1,11 @@
+<nav class="navbar" [ngClass]="{'scrolled': isScrolled}">
+  <div class="logo">
+    <a href="#">JCDV</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#drum-doctor" (click)="scrollToSection('drum-doctor', $event)">DRUM DOCTOR</a></li>
+    <li><a href="#portfolio" (click)="scrollToSection('portfolio', $event)">PORTFOLIO</a></li>
+    <li><a href="#clases" (click)="scrollToSection('clases', $event)">CLASES</a></li>
+    <li><a href="#contacto" (click)="scrollToSection('contacto', $event)">CONTACTO</a></li>
+  </ul>
+</nav>
