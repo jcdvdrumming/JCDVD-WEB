@@ -1,30 +1,74 @@
 <div class="home-container">
-  <section id="inicio" class="hero-section">
-    <div class="hero-overlay"></div>
+  <section id="inicio" class="hero-section" aria-labelledby="hero-title">
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+
     <div class="hero-content">
-      <div class="hero-top-text">
-        <span class="spaced-text">BATERISTA PROFESIONAL & DRUM DOCTOR</span>
-      </div>
-      <h1 class="hero-title">
-        JCDV<br>
-        <span class="hero-subtitle-inline">Drumming</span>
+      <p class="hero-eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Baterista Profesional &amp; Drum Doctor
+      </p>
+
+      <h1 id="hero-title" class="hero-title">
+        <span class="hero-title-line">JCDV</span>
+        <span class="hero-title-accent">Drumming</span>
       </h1>
-      <div class="hero-buttons">
-        <button class="pill-btn">ROCK</button>
-        <button class="pill-btn">REGGAE</button>
-        <button class="pill-btn">FUNK</button>
-        <button class="pill-btn">JAZZ</button>
+
+      <ul class="hero-tags" aria-label="Géneros y estilos">
+        <li>Rock</li>
+        <li>Reggae</li>
+        <li>Funk</li>
+        <li>Jazz</li>
+      </ul>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary"
+          href="https://wa.me/5493446517773?text=Hola!%20Quiero%20reservar%20una%20clase%20de%20bater%C3%ADa."
+          target="_blank" rel="noopener noreferrer">
+          Reservá tu clase
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a class="btn btn-ghost" href="#portfolio">Escuchá su música</a>
       </div>
-      <div class="hero-footer-text">
-        <p>&#64;jcdvdrumming</p>
-      </div>
+
+      <p class="hero-handle">
+        <a href="https://www.instagram.com/jcdvdrumming/" target="_blank" rel="noopener noreferrer">&#64;jcdvdrumming</a>
+      </p>
     </div>
-    <div class="scroll-indicator">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="scroll-label">Scroll</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+        stroke-linecap="round" stroke-linejoin="round">
         <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
     </div>
   </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Rock</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Reggae</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Funk</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Jazz</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Drum Doctor</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Clases</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Sesiones</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Shows en vivo</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Rock</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Reggae</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Funk</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Jazz</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Drum Doctor</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Clases</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Sesiones</span><span class="marquee-dot">•</span>
+      <span class="marquee-item">Shows en vivo</span><span class="marquee-dot">•</span>
+    </div>
+  </div>
 
   <section id="drum-doctor" class="section">
     <app-drum-doctor></app-drum-doctor>

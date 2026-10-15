@@ -1,138 +1,191 @@
 .portfolio-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 0;
   color: #fff;
 }
 
 .header-section {
-  text-align: center;
-  margin-bottom: 5rem;
-  width: 100%;
+  margin-bottom: 4.5rem;
 }
 
 .section-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(3rem, 8vw, 4.5rem);
-  font-weight: 800;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 600;
   text-transform: uppercase;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 1rem;
   letter-spacing: -0.02em;
+  line-height: 0.95;
   color: #fff;
-  line-height: 1;
 }
 
 .section-subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   font-style: italic;
-  color: #888;
+  color: var(--muted);
   margin: 0;
 }
 
 .portfolio-content {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3.5rem;
   width: 100%;
-  align-items: stretch; /* Ensure both columns stretch to same height */
-}
-
-@media (max-width: 900px) {
-  .portfolio-content {
-    grid-template-columns: 1fr;
-  }
+  align-items: start;
 }
 
 .portfolio-images {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  height: 100%; /* Takes full height of the grid cell */
+  gap: 1.25rem;
+  position: sticky;
+  top: calc(var(--nav-height) + 24px);
 }
 
 .image-wrapper {
-  flex: 1; /* Both images share exactly the 50% available vertical space */
+  margin: 0;
   border-radius: 6px;
   overflow: hidden;
-  display: flex;
+  border: 1px solid var(--line);
 }
 
 .portfolio-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.5s var(--ease), transform 0.6s var(--ease);
+}
+
+.image-wrapper:hover .portfolio-img {
+  filter: grayscale(0);
+  transform: scale(1.03);
 }
 
 .portfolio-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%; /* Also takes full height */
+  border-top: 1px solid var(--line);
+  margin: 0;
+  padding: 0;
 }
 
 .portfolio-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 1rem; /* Increased padding vertically to stretch the list more */
-  border-bottom: 1px solid #222;
-  transition: background-color 0.3s ease;
-  border-radius: 4px;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.3s var(--ease);
 }
 
 .portfolio-item:hover {
   background-color: rgba(255, 255, 255, 0.02);
 }
 
-.portfolio-item:first-child {
-  border-top: 1px solid #222;
+.item-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.6rem 1rem;
+  position: relative;
+}
+
+.portfolio-item:not(:has(.item-link)) {
+  padding: 1.6rem 1rem;
 }
 
 .item-content {
   display: flex;
   flex-direction: column;
-  max-width: 80%;
+  min-width: 0;
   padding-right: 1rem;
+  transition: transform 0.3s var(--ease);
+}
+
+.portfolio-item:hover .item-content {
+  transform: translateX(6px);
 }
 
 .item-tag {
-  font-family: 'Outfit', sans-serif;
   font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
-  color: #555;
+  letter-spacing: 0.18em;
+  color: var(--muted-2);
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.55rem;
 }
 
 .item-title {
   font-family: 'Outfit', sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.2rem;
-  color: #e5e5e5;
-  margin: 0 0 0.4rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  color: #e9e9e9;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+  transition: color 0.3s var(--ease);
 }
 
 .item-desc {
   font-family: 'Outfit', sans-serif;
   font-weight: 300;
   font-size: 0.85rem;
-  color: #888;
+  color: var(--muted);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
+}
+
+.portfolio-item:hover .item-title {
+  color: #fff;
 }
 
 .item-number {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  font-size: 3rem;
-  color: rgba(255, 255, 255, 0.06);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.14);
   line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.3s var(--ease);
+}
+
+.portfolio-item:hover .item-number {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.item-arrow {
+  color: var(--muted);
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.item-link:hover .item-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .portfolio-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .portfolio-images {
+    position: static;
+    flex-direction: row;
+  }
+
+  .image-wrapper {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-images {
+    flex-direction: column;
+  }
 }

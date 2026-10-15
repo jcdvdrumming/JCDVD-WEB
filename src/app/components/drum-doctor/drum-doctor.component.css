@@ -1,159 +1,145 @@
 .drum-doctor-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 0;
-  color: #111;
+  color: var(--ink);
 }
 
 .header-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 700px;
-  margin-bottom: 5rem;
+  max-width: 720px;
+  margin-bottom: 4.5rem;
 }
 
-.tag-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #e5e5e5;
-  color: #555;
-  padding: 6px 18px;
-  border-radius: 30px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+.header-section .section-index {
+  color: var(--muted-2);
 }
 
 .section-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 800;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 600;
   text-transform: uppercase;
-  margin: 1.5rem 0 0.5rem;
+  margin: 0 0 1rem;
   letter-spacing: -0.02em;
-  line-height: 1;
+  line-height: 0.95;
 }
 
 .section-subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   font-style: italic;
-  color: #666;
-  line-height: 1.5;
+  color: var(--ink-muted);
+  line-height: 1.55;
   margin: 0;
 }
 
-.subheading-container {
-  text-align: center;
-  margin-bottom: 2rem;
-  width: 100%;
+.services-list {
+  border-top: 1px solid #e2e2e2;
 }
 
-.subheading {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  font-size: 1.15rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0;
-}
-
-.services-grid {
+.service-item {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 1.5rem;
-  width: 100%;
+  grid-template-columns: auto auto 1fr;
+  align-items: start;
+  gap: 2rem;
+  padding: 2.25rem 0.5rem;
+  border-bottom: 1px solid #e2e2e2;
+  transition: background-color 0.3s var(--ease), padding-left 0.3s var(--ease);
 }
 
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+.service-item:hover {
+  background-color: rgba(0, 0, 0, 0.015);
+  padding-left: 1.25rem;
 }
 
-.service-card {
-  display: flex;
-  gap: 1.5rem;
-  background-color: #f0f0f0;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.service-number {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #b5b5b5;
+  padding-top: 0.35rem;
+  min-width: 2.5rem;
 }
 
-.service-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-}
-
-.icon-wrapper {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid #d0d0d0;
+.service-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #333;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #d5d5d5;
+  border-radius: 50%;
+  color: var(--ink);
+  flex-shrink: 0;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
-.card-content {
-  display: flex;
-  flex-direction: column;
+.service-item:hover .service-icon {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
 }
 
-.card-content h4 {
+.service-body {
+  padding-top: 0.15rem;
+}
+
+.service-title {
   font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  font-size: 1rem;
-  margin: 0 0 0.5rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
-.card-content p {
+.service-desc {
   font-family: 'Outfit', sans-serif;
   font-weight: 400;
   font-size: 0.95rem;
-  color: #666;
+  color: var(--ink-muted);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
+  max-width: 620px;
 }
 
 .cta-container {
   margin-top: 4rem;
-  text-align: center;
 }
 
 .cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background-color: #111;
+  gap: 0.7rem;
+  background-color: var(--ink);
   color: #fff;
-  border: none;
-  padding: 14px 32px;
+  border: 1px solid var(--ink);
+  padding: 1rem 2.25rem;
   border-radius: 40px;
-  font-family: 'Outfit', sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s var(--ease), background-color 0.3s var(--ease);
 }
 
 .cta-button:hover {
-  background-color: #333;
+  background-color: #2b2b2b;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    padding: 1.75rem 0;
+  }
+
+  .service-number {
+    min-width: 1.75rem;
+    font-size: 0.8rem;
+  }
+
+  .service-icon {
+    display: none;
+  }
 }

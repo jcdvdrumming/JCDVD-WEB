@@ -1,11 +1,32 @@
-<nav class="navbar" [ngClass]="{'scrolled': isScrolled}">
-  <div class="logo">
-    <a href="#">JCDV</a>
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-inner">
+    <div class="logo">
+      <a href="#inicio" (click)="scrollToSection('inicio', $event)" aria-label="JCDV Drumming — Inicio">JCDV</a>
+    </div>
+
+    <button class="menu-toggle" type="button" [attr.aria-expanded]="isMenuOpen" aria-controls="primary-nav"
+      [attr.aria-label]="isMenuOpen ? 'Cerrar menú' : 'Abrir menú'" (click)="toggleMenu()">
+      <span class="menu-bar" aria-hidden="true"></span>
+      <span class="menu-bar" aria-hidden="true"></span>
+    </button>
+
+    <ul id="primary-nav" class="nav-links" [class.open]="isMenuOpen">
+      <li>
+        <a href="#drum-doctor" [attr.aria-current]="activeSection === 'drum-doctor' ? 'true' : null"
+          (click)="scrollToSection('drum-doctor', $event)">Drum Doctor</a>
+      </li>
+      <li>
+        <a href="#portfolio" [attr.aria-current]="activeSection === 'portfolio' ? 'true' : null"
+          (click)="scrollToSection('portfolio', $event)">Trayectoria</a>
+      </li>
+      <li>
+        <a href="#clases" [attr.aria-current]="activeSection === 'clases' ? 'true' : null"
+          (click)="scrollToSection('clases', $event)">Clases</a>
+      </li>
+      <li>
+        <a href="#contacto" [attr.aria-current]="activeSection === 'contacto' ? 'true' : null"
+          (click)="scrollToSection('contacto', $event)">Contacto</a>
+      </li>
+    </ul>
   </div>
-  <ul class="nav-links">
-    <li><a href="#drum-doctor" (click)="scrollToSection('drum-doctor', $event)">DRUM DOCTOR</a></li>
-    <li><a href="#portfolio" (click)="scrollToSection('portfolio', $event)">PORTFOLIO</a></li>
-    <li><a href="#clases" (click)="scrollToSection('clases', $event)">CLASES</a></li>
-    <li><a href="#contacto" (click)="scrollToSection('contacto', $event)">CONTACTO</a></li>
-  </ul>
 </nav>
